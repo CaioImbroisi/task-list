@@ -1,5 +1,5 @@
 body {
-    background-image: url("/img/day.png");
+    background-image: url("/img/day.jpg");
     background-size: auto;
     background-position: center;
     font-family: sans-serif;
@@ -11,7 +11,7 @@ body {
 }
 
 .body-dark {
-    background-image: url("/img/night.png");
+    background-image: url("/img/night.jpg");
     background-size: auto;
     background-position: center;
     font-family: sans-serif;
