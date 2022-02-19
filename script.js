@@ -1,7 +1,15 @@
 let list = document.querySelector('#lista-tarefas')
-
+let btnAdd = document.querySelector('#criar-tarefa');
+let btnRemoveAll = document.querySelector('#apaga-tudo');
+let btnRemoveDone = document.querySelector('#remover-finalizados');
+let btnRemoveSelected = document.querySelector('#remover-selecionado')
+let btnSave = document.querySelector('#salvar-tarefas')
+let btnMoveUp = document.querySelector('#mover-cima')
+let btnMoveDown = document.querySelector('#mover-baixo')
+let btnTheme = document.querySelector('#mudar-tema')
 //Função para o botão adicionar itens a lista (Verifiquei na W3Schools sobre como
 //adicionar o conteúdo escrito na input.(usando .value))
+
 function addTask() {
     let taskList = document.querySelector('#lista-tarefas');
     let li = document.createElement('li');
@@ -11,6 +19,7 @@ function addTask() {
     taskList.appendChild(li)
     document.querySelector('#texto-tarefa').value = '';
 }
+btnAdd.addEventListener('click', addTask)
 
 
 //remover tudo
@@ -20,7 +29,7 @@ function resetTask() {
         taskList[i].remove()
     }
 }
-
+btnRemoveAll.addEventListener('click', resetTask)
 
 // Remover Finalizados
 function removeDoneTask() {
@@ -28,7 +37,7 @@ function removeDoneTask() {
     for (i = 0; i < taskList.length; i += 1)
         taskList[i].remove()
 }
-
+btnRemoveDone.addEventListener('click', removeDoneTask)
 
 //Remover Selecionados
 function removeSelectedTask() {
@@ -36,6 +45,8 @@ function removeSelectedTask() {
     for (i = 0; i < taskList.length; i += 1)
         taskList[i].remove()
 }
+btnRemoveSelected.addEventListener('click', removeSelectedTask)
+
 
 // Marcar de cinza ao clicar (consultei os trabalhos de alguns alunos)
 function markTask(event) {
@@ -65,6 +76,7 @@ function saveTask() {
     let taskList = document.querySelector("ol");
     localStorage.setItem("taskList", taskList.innerHTML)
 }
+btnSave.addEventListener('click', saveTask)
 
 window.onload = function () {
     let items = localStorage.getItem("taskList");
@@ -83,6 +95,7 @@ function moveTaskUp() {
         moveTo.insertAdjacentElement('beforebegin', selectedItem)
     }
 }
+btnMoveUp.addEventListener('click', moveTaskUp)
 
 
 // Mover item selecionado para baixo
@@ -93,7 +106,7 @@ function moveTaskDown() {
         moveTo.insertAdjacentElement('afterend', selectedItem)
     }
 }
-
+btnMoveDown.addEventListener('click', moveTaskDown)
 
 // Esta função verifica se há itens selecionados (item da lista com BG cinza).
 // Esta função esta aplicada nas funções "MoveTaskUp" e "MoveTaskDown".
@@ -155,3 +168,4 @@ function changeTheme() {
     let bgButtons = document.querySelector('.bgbuttons')
     bgButtons.classList.toggle('bgbuttons-dark')
 }
+btnTheme.addEventListener('click', changeTheme);

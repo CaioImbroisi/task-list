@@ -23,14 +23,14 @@
         <span>Type your task!</span>
         <input type="text" required id="texto-tarefa" />
       </section>
-      <button onclick="addTask()" class="buttons" id="criar-tarefa">Add Task</button>
-      <button onclick="saveTask()" class="buttons" id="salvar-tarefas">Save Tasks</button>
-      <button onclick="moveTaskUp()" class="buttons" id="mover-cima">Move Up</button>
-      <button onclick="moveTaskDown()" class="buttons" id="mover-baixo">Move Down</button>
-      <button onclick="removeSelectedTask()" class="buttons" id="remover-selecionado">Remove Selected</button>
-      <button onclick="removeDoneTask()" class="buttons" id="remover-finalizados">Remove Completed </button>
-      <button onclick="resetTask()" class="buttons" id="apaga-tudo">Remove All List</button>
-      <button onclick="changeTheme()" class="buttons">Change Theme</button>
+      <button class="buttons" id="criar-tarefa">Add Task</button>
+      <button class="buttons" id="mover-cima">Move Up</button>
+      <button class="buttons" id="salvar-tarefas">Save Tasks</button>
+      <button class="buttons" id="mover-baixo">Move Down</button>
+      <button class="buttons" id="remover-selecionado">Remove Selected</button>
+      <button class="buttons" id="remover-finalizados">Remove Completed </button>
+      <button class="buttons" id="apaga-tudo">Remove All List</button>
+      <button class="buttons" id="mudar-tema">Change Theme</button>
       <button class="buttons language"><a href="index.html">PT-BR Version</a></button>
     </section>
     <section class="bglist">
@@ -38,5 +38,8 @@
     </section>
   </div>
 </body>
+<footer>
+  <p>Created by: <span style="color:hotpink;"> Caio Imbroisi </span>- Trybe Class 20B - Meet <a href="http://betrybe.com"><span style="font-weight: 800; color:rgb(5, 207, 5);">TRYBE</span></a>!
+</footer>
 <script src="script.js"></script>
 </html>
